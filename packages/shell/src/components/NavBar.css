@@ -1,0 +1,25 @@
+
+
+.nav{
+    display: flex;
+    background-color: #5e5757;
+    margin-top:5px;
+    margin-bottom: 5px;;
+    font-size: 20px;
+}
+.menu-item{
+    margin:10px;
+}
+.menu-item a {
+    text-decoration: none;
+    text-align: center;
+    color:white;
+    padding:10px;
+}
+.active{
+    background-color: #111;
+    
+}
+.inactive{
+    color: #ffffff;;
+}
