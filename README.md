@@ -53,7 +53,7 @@ or
 > npx lerna bootstrap
 ```
 
-3. Update the file `start.sh` with the Client SIDE ID  from your LaunchDarkly projects.
+3. Create the file `start.sh` with the Client SIDE ID  from your LaunchDarkly projects.
    
  ```
 # LD PROJ-2 for the Body component
@@ -63,14 +63,14 @@ export CONTENT_CLIENT_ID= <Replace with LD_CLIENT_ID>
 # LD PROJ-1 for the Shell, Header and Footer components
 export SHELL_CLIENT_ID= <Replace with LD_CLIENT_ID>
 
+lerna run start --parallel
+
 ```
 
-4. Run the shell script. This will start and launch the following application on your browser:
-   * components
-   * content
-   * shell <-- this is the host for the micro frontends
+4. Make the file `start.sh` executable and run script.
    
 ```
+> chmod +x start.sh
 > ./start.sh
 ```
 
