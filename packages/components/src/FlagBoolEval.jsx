@@ -9,7 +9,6 @@ const FlagBoolEval=({flagKey, overrideValue, children})=>{
   isTrue = !isTrue ? false : isTrue;
   isTrue= (overrideValue)? (overrideValue.toLowerCase() ==='true'):isTrue;
 
-  // console.log(`flagBooleEval flagKey=${flagKey} val=${isTrue}`);
   return isTrue ? children : <></>;
 }
 

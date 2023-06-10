@@ -1,8 +1,8 @@
 import React,{Suspense} from "react";
 import ReactDOM from "react-dom/client";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter , useRoutes} from "react-router-dom";
 
-import { asyncWithLDProvider, useFlags } from 'launchdarkly-react-client-sdk';
+import { asyncWithLDProvider} from 'launchdarkly-react-client-sdk';
 import NavBar from "./components/NavBar";
 
 import "./index.css";
@@ -36,23 +36,28 @@ const Message=({message})=>(
         <span style={{color:"red"}}>{message}</span>
     </FlagBoolEval>
 );
-
-const LogFlagStatus=({flagKey})=>{
-  const flags = useFlags(); 
-  console.log( `${flagKey}=${flags[flagKey]}`);
-  return <></>;
-}
+const SingleProj=()=>(
+  <Suspense fallback={<Loading/>}>
+    <Body> 
+      <Message message="Special public announcement."/>
+    </Body>
+  </Suspense> 
+);
+const MultiProj=()=>(
+  
+  <Suspense fallback={<Loading/>}>
+    <BodyLDInit>
+      <Message message="Special public announcement."/>
+    </BodyLDInit>
+  </Suspense> 
+);
 
 const App = () => (
-  
   <LDProvider>
-    <LogFlagStatus flagKey="simpleToggle"/>
-    
     <div id="shell" className="container">
       <span className="pad-left10"> Host : <FlagStatus/> </span>
        <div style={{fontSize:"1rem", paddingLeft:"10px"}}>Package: shell</div>
      
-   
        <BrowserRouter>
         <NavBar />
 
@@ -60,27 +65,16 @@ const App = () => (
           <Header/>
         </FlagConditionalRender>
         
-          <Routes>
-            <Route exact path='/' element={
-              <Suspense fallback={<Loading/>}>
-                <Body> 
-                  <Message message="Special public announcement."/>
-                </Body>
-              </Suspense> 
-            } />
-            <Route exact path='/multi-project' element={
-                <Suspense fallback={<Loading/>}>
-                  <BodyLDInit>
-                    <Message message="Special public announcement."/>
-                  </BodyLDInit>
-                </Suspense> 
-            } />
-          </Routes>
+        <Routes>
+          <Route exact path='/' element={<SingleProj/> } />
+          <Route exact path='/multi-project' element={<MultiProj/> } />
+        </Routes>
       </BrowserRouter>  
+   
       <Footer/>
       
     </div>
   </LDProvider>
 );
 
-ReactDOM.createRoot(document.getElementById('app')).render(<App/>);
+ReactDOM.createRoot(document.getElementById('app')).render(<React.StrictMode><App/></React.StrictMode>);

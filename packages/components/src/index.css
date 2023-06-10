@@ -4,7 +4,7 @@ body {
 .flag-display {
   font-size: 25px;
   color:white;
-  padding:5px;
+  /* padding:5px; */
 }
 .center {
   margin: auto;
@@ -17,10 +17,6 @@ body {
   font-size: 3rem;
    max-width: 800px;
   
-}
-.centeredtext {
-  border: solid 3px blue;
-  text-align: center;
 }
 .on{
   background: green;

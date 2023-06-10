@@ -4,8 +4,8 @@ import "./index.css";
 
 
 const HeaderNew = () => (
-  <div id="header" className="radical fragment">
-    <div className="centeredtext"> New Header: <FlagStatus />
+  <div id="header" className="fragment">
+    <div className="center"> New Header: <FlagStatus />
         <div style={{fontSize:"1rem"}}>
           <div>Package: components</div>
         </div>
