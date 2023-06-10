@@ -23,12 +23,8 @@ const LDProvider = await asyncWithLDProvider({
     clientSideID,
     context: {
       "kind": "user",
-      "key": "user-key-123abc",
-      "name": "James Wilson",
-      "email": "jwilson@example.com",
       "anonymous": true
     },
-    options: { /* ... */ }
   });
 
 const Message=({message})=>(

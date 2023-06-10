@@ -11,19 +11,14 @@ const LDProvider = await asyncWithLDProvider({
     clientSideID,
     context: {
       "kind": "user",
-      "key": "user-key-456def",
-      "name": "Richard Marx",
-      "email": "rmarx@example.com",
       "anonymous": true
     },
-    options: { /* ... */ }
   });
 
 const App = () => (
   <LDProvider>
     <Header/>
     <Footer />
-    
   </LDProvider>
 );
 ReactDOM.createRoot(document.getElementById('app')).render(<App/>);
