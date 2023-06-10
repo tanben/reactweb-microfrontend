@@ -15,7 +15,11 @@ module.exports = (_, argv) => ({
     port: 3001,
     historyApiFallback: true,
   },
-
+  externals: {
+    Config: JSON.stringify({
+      clientSideID: process.env.CONTENT_CLIENT_ID,
+    }),
+  },
   module: {
     rules: [
       {

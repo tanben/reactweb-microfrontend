@@ -2,9 +2,8 @@ import React from "react";
 import { useFlags } from 'launchdarkly-react-client-sdk';
 
 
-const FlagStatus=(props)=>{
+const FlagStatus=({flagKey="simpleToggle"})=>{
     const flags = useFlags();
-    const flagKey = (props && props.flagKey)?props.flagKey: "simpleToggle";
     const flagValue = (flags[flagKey])?"On":"Off";
     const cssName=`flag-display ${(flags[flagKey])?"on":"off"}`;
     

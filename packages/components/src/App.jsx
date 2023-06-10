@@ -4,11 +4,11 @@ import Footer from './Footer';
 import Header from './Header';
 import './index.css';
 import { asyncWithLDProvider } from 'launchdarkly-react-client-sdk';
-
+import {clientSideID} from 'Config';
 
 
 const LDProvider = await asyncWithLDProvider({
-    clientSideID:"641cabe12916f81284bc5739",
+    clientSideID,
     context: {
       "kind": "user",
       "key": "user-key-456def",
