@@ -1,6 +1,6 @@
 import React,{Suspense} from "react";
 import ReactDOM from "react-dom/client";
-import { Route, Routes, BrowserRouter , useRoutes} from "react-router-dom";
+import { Route, Routes, BrowserRouter} from "react-router-dom";
 
 import { asyncWithLDProvider} from 'launchdarkly-react-client-sdk';
 import NavBar from "./components/NavBar";
