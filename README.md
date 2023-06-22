@@ -21,7 +21,7 @@ This is a sample LaunchDarkly implementation for a micro frontend application(MF
 
 ## Requirements
 * NodeJS  >=v16.x
-* Lerna
+* Lerna >=v7.x
 * React v18.x
 * Webpack v5.x
 * LaunchDarkly Account
@@ -63,6 +63,7 @@ export CONTENT_CLIENT_ID= <Replace with LD_CLIENT_ID>
 # LD PROJ-1 for the Shell, Header and Footer components
 export SHELL_CLIENT_ID= <Replace with LD_CLIENT_ID>
 
+# or npx lerna run start --parallel
 lerna run start --parallel
 
 ```
