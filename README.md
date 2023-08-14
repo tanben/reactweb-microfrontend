@@ -45,12 +45,12 @@ LD Proj-2
 
 >
 1. Install [lerna](https://www.npmjs.com/package/lerna) for access to the lerna CLI.
-2. Bootstrap the packages in the current Lerna repo
+2. Install dependencies.
 
 ```
-> lerna bootstrap 
+> lerna bootstrap --hoist
 or 
-> npx lerna bootstrap
+> npx lerna bootstrap --hoist
 ```
 
 3. Create the file `start.sh` with the Client SIDE ID  from your LaunchDarkly projects.

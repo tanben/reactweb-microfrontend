@@ -18,13 +18,37 @@ const FlagConditionalRender = React.lazy(() => import('components/FlagConditiona
 
 import  {clientSideID} from 'Config';
 
-
-const LDProvider = await asyncWithLDProvider({
-    clientSideID,
-    context: {
-      "kind": "user",
+const context=  {
+    "kind": "multi",
+    "user": {
+      "key": "d1d54a7c-71f6-4cb7-9ee4-b2b7304e4062",
+      "name": "Betsy Sawayn",
+      "state": "Mississippi",
+      "city": "Luciehaven",
+      "country": "Romania",
       "anonymous": true
     },
+    "subscription": {
+      "key": "free"
+    },
+    "application": {
+      "key": "autobahn",
+      "version": "5.0.4"
+    },
+    "department": {
+      "name": "Toys",
+      "key": "toys",
+      "group": "dark-launcher"
+    },
+    "company": {
+      "name": "Durgan Inc",
+      "key": "durgan-inc"
+    }
+  };
+  
+const LDProvider = await asyncWithLDProvider({
+    clientSideID,
+    context,
   });
 
 const Message=({message})=>(
