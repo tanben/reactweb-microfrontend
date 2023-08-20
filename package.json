@@ -1,10 +1,12 @@
 {
   "name": "root",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "devDependencies": {
-    "lerna": "^7.0.2"
+  "scripts": {
+    "install:components": "cd packages/components && npm install",
+    "install:content": "cd packages/content && npm install",
+    "install:shell": "cd packages/shell && npm install",
+    "start:components": "npm --prefix packages/components run start",
+    "start:content": " CONTENT_CLIENT_ID='' npm --prefix packages/content start",
+    "start:shell": "SHELL_CLIENT_ID='' npm --prefix packages/shell start"
   }
 }

@@ -1,8 +1,7 @@
 # README
-This is a sample LaunchDarkly implementation for a micro frontend application(MFE) demonstrating the following use-cases:
-* Single Project -  Using a single LaunchDarkly React client SDK instance
-
-* Multi-Project - Using multiple LaunchDarkly React client SDK instance
+This is a sample micro frontend application(MFE) demonstrating the following use-cases:
+* Using a single LaunchDarkly React client SDK instance
+* Using multiple LaunchDarkly React client SDK instance
 
 ## Overview
 ![](./img/overview.jpg)
@@ -21,7 +20,6 @@ This is a sample LaunchDarkly implementation for a micro frontend application(MF
 
 ## Requirements
 * NodeJS  >=v16.x
-* Lerna >=v7.x
 * React v18.x
 * Webpack v5.x
 * LaunchDarkly Account
@@ -43,35 +41,27 @@ LD Proj-2
 ![Proj2](img/ldFlagDashboard2.jpg)
 
 
->
-1. Install [lerna](https://www.npmjs.com/package/lerna) for access to the lerna CLI.
-2. Install dependencies.
-
+>`NOTE` : update the Root project.json and set your LaunchDarkly project client side Id
 ```
-> lerna bootstrap --hoist
-or 
-> npx lerna bootstrap --hoist
+"start:content": " CONTENT_CLIENT_ID="Client side ID" npm --prefix packages/content start",
+    "start:shell": "SHELL_CLIENT_ID="Client side ID" npm --prefix packages/shell start"
 ```
 
-3. Create the file `start.sh` with the Client SIDE ID  from your LaunchDarkly projects.
+1. Install dependencies.
+
+```
+npm run install:components
+npm run install:content
+npm run install:shell
+```
+
+2. Run the following npm scripts in sequence in separate terminals
    
- ```
-# LD PROJ-2 for the Body component
-export CONTENT_CLIENT_ID= <Replace with LD_CLIENT_ID>
-
-
-# LD PROJ-1 for the Shell, Header and Footer components
-export SHELL_CLIENT_ID= <Replace with LD_CLIENT_ID>
-
-# or npx lerna run start --parallel
-lerna run start --parallel
-
+ 
+```
+npm run start:components
+npm run start:content
+npm run start:shell
 ```
 
-4. Make the file `start.sh` executable and run script.
-   
-```
-> chmod +x start.sh
-> ./start.sh
-```
 
