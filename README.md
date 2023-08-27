@@ -13,7 +13,6 @@ This is a sample micro frontend application(MFE) demonstrating the following use
 ![](./img/ld-projects.jpg)
 
 ## Tech Stack
-* [Lerna](https://www.npmjs.com/package/lerna)
 * [Reach v18.x](https://react.dev/blog/2022/03/29/react-v18)
 * [Webpack 5 Module Federation](https://module-federation.github.io/)
 * [LaunchDarkly Feature Management Platform](https://launchdarkly.com/)
