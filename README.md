@@ -1,32 +1,19 @@
 # README
-This is a sample micro frontend application(MFE) demonstrating the following use-cases:
-* Using a single LaunchDarkly React client SDK instance
-* Using multiple LaunchDarkly React client SDK instance
-
-## Overview
-![](./img/overview.jpg)
+This is a sample micro frontend application that demonstrates how to manage React component states using either a single or multiple LaunchDarkly React Web client SDK instances.
 
 ## Packages
 ![](./img/packages.jpg)
 
-## LaunchDarkly Project Scope
-![](./img/ld-projects.jpg)
-
-## Tech Stack
-* [Reach v18.x](https://react.dev/blog/2022/03/29/react-v18)
-* [Webpack 5 Module Federation](https://module-federation.github.io/)
-* [LaunchDarkly Feature Management Platform](https://launchdarkly.com/)
 
 ## Requirements
 * NodeJS  >=v16.x
-* React v18.x
-* Webpack v5.x
+* React >=v18.x
+* Webpack >=v5.x
 * LaunchDarkly Account
 
 
 ## Setup
-### Feature Flags
-Create the following feature flags using the specified flag keys.
+1. Create the following feature flags using specific flag keys.
 
 | Project | flag key | flag type | decription|
 |---|---|---|---|
@@ -46,7 +33,7 @@ LD Proj-2
     "start:shell": "SHELL_CLIENT_ID="Client side ID" npm --prefix packages/shell start"
 ```
 
-1. Install dependencies.
+2. Install dependencies.
 
 ```
 npm run install:components
@@ -54,8 +41,7 @@ npm run install:content
 npm run install:shell
 ```
 
-2. Run the following npm scripts in sequence in separate terminals
-   
+3. Stsart the containers. Run the following npm scripts in sequence in separate terminals
  
 ```
 npm run start:components
